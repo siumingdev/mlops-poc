@@ -58,8 +58,8 @@ services:
     restart: unless-stopped
     volumes:
     - ./data/elastic_7:/usr/share/elasticsearch/data
-    ports:
-    - "9200:9200"
+#    ports:
+#    - "9200:9200"
 
   fileserver:
     networks:
@@ -87,8 +87,8 @@ services:
     volumes:
     - ./data/mongo/db:/data/db
     - ./data/mongo/configdb:/data/configdb
-    ports:
-    - "27017:27017"
+#    ports:
+#    - "27017:27017"
 
   redis:
     networks:
@@ -98,8 +98,8 @@ services:
     restart: unless-stopped
     volumes:
     - ./data/redis:/data
-    ports:
-    - "6379:6379"
+#    ports:
+#    - "6379:6379"
 
   webserver:
     command:

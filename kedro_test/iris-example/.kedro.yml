@@ -1,6 +1,0 @@
-context_path: iris_example.run.ProjectContext
-project_name: "Iris Example"
-project_version: "0.16.5"
-package_name: "iris_example"
-hooks:
-  - iris_example.hooks.project_hooks

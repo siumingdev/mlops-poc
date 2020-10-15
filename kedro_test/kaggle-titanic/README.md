@@ -1,4 +1,4 @@
-# Iris Example
+# Kaggle Titanic
 
 ## Overview
 

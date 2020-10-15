@@ -26,30 +26,42 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""Example code for the nodes in the example pipeline. This code is meant
-just for illustrating basic Kedro features.
+from setuptools import find_packages, setup
 
-Delete this when you start working on your own Kedro project.
-"""
-
-from kedro.pipeline import Pipeline, node
-
-from .nodes import predict, report_accuracy, train_model
+entry_point = (
+    "kaggle-titanic = kaggle_titanic.run:run_package"
+)
 
 
-def create_pipeline(**kwargs):
-    return Pipeline(
-        [
-            node(
-                train_model,
-                ["example_train_x", "example_train_y", "parameters"],
-                "example_model",
-            ),
-            node(
-                predict,
-                dict(model="example_model", test_x="example_test_x"),
-                "example_predictions",
-            ),
-            node(report_accuracy, ["example_predictions", "example_test_y"], None),
+# get the dependencies and installs
+with open("requirements.txt", "r", encoding="utf-8") as f:
+    # Make sure we strip all comments and options (e.g "--extra-index-url")
+    # that arise from a modified pip.conf file that configure global options
+    # when running kedro build-reqs
+    requires = []
+    for line in f:
+        req = line.split("#", 1)[0].strip()
+        if req and not req.startswith("--"):
+            requires.append(req)
+
+setup(
+    name="kaggle_titanic",
+    version="0.1",
+    packages=find_packages(exclude=["tests"]),
+    entry_points={"console_scripts": [entry_point]},
+    install_requires=requires,
+    extras_require={
+        "docs": [
+            "sphinx>=1.6.3, <2.0",
+            "sphinx_rtd_theme==0.4.1",
+            "nbsphinx==0.3.4",
+            "nbstripout==0.3.3",
+            "recommonmark==0.5.0",
+            "sphinx-autodoc-typehints==1.6.0",
+            "sphinx_copybutton==0.2.5",
+            "jupyter_client>=5.1.0, <7.0",
+            "tornado>=4.2, <6.0",
+            "ipykernel>=4.8.1, <5.0",
         ]
-    )
+    },
+)

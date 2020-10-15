@@ -29,7 +29,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# iris_example documentation build
+# kaggle_titanic documentation build
 # configuration file, created by sphinx-quickstart.
 #
 # This file is execfile()d with the current directory set to its
@@ -50,11 +50,11 @@ import re
 from kedro.framework.cli.utils import find_stylesheets
 from recommonmark.transform import AutoStructify
 
-from iris_example import __version__ as release
+from kaggle_titanic import __version__ as release
 
 # -- Project information -----------------------------------------------------
 
-project = "iris_example"
+project = "kaggle_titanic"
 copyright = "2020, QuantumBlack Visual Analytics Limited"
 author = "QuantumBlack"
 
@@ -149,7 +149,7 @@ html_show_sourcelink = False
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "iris_exampledoc"
+htmlhelp_basename = "kaggle_titanicdoc"
 
 # -- Options for LaTeX output ------------------------------------------------
 
@@ -177,8 +177,8 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "iris_example.tex",
-        "iris_example Documentation",
+        "kaggle_titanic.tex",
+        "kaggle_titanic Documentation",
         "QuantumBlack",
         "manual",
     )
@@ -191,8 +191,8 @@ latex_documents = [
 man_pages = [
     (
         master_doc,
-        "iris_example",
-        "iris_example Documentation",
+        "kaggle_titanic",
+        "kaggle_titanic Documentation",
         [author],
         1,
     )
@@ -206,11 +206,11 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "iris_example",
-        "iris_example Documentation",
+        "kaggle_titanic",
+        "kaggle_titanic Documentation",
         author,
-        "iris_example",
-        "Project iris_example codebase.",
+        "kaggle_titanic",
+        "Project kaggle_titanic codebase.",
         "Data-Science",
     )
 ]

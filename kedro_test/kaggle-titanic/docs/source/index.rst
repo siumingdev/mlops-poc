@@ -1,8 +1,8 @@
-.. iris_example documentation master file, created by sphinx-quickstart.
+.. kaggle_titanic documentation master file, created by sphinx-quickstart.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to project iris_example's API docs!
+Welcome to project kaggle_titanic's API docs!
 =============================================
 
 .. toctree::

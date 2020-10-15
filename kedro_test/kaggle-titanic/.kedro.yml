@@ -1,0 +1,6 @@
+context_path: kaggle_titanic.run.ProjectContext
+project_name: "Kaggle Titanic"
+project_version: "0.16.5"
+package_name: "kaggle_titanic"
+hooks:
+  - kaggle_titanic.hooks.project_hooks
