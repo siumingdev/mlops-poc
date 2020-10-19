@@ -10,3 +10,7 @@ train:
 test:
     type: pandas.CSVDataSet
     filepath: data/01_raw/test.csv
+
+filled_age_train:
+    type: pandas.CSVDataSet
+    filepath: data/02_intermediate/filled_age_train.csv
