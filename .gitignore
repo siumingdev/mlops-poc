@@ -1,6 +1,6 @@
 /.vscode/
 /.idea/
-/env/
+/allegro_trains_test/env/
 /backing_services/allegro_trains/config/
 /backing_services/allegro_trains/data/
 /backing_services/allegro_trains/logs/
