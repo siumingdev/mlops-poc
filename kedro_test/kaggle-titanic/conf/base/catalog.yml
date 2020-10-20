@@ -11,6 +11,10 @@ test:
     type: pandas.CSVDataSet
     filepath: data/01_raw/test.csv
 
-filled_age_train:
+train_filled_age:
     type: pickle.PickleDataSet
-    filepath: data/02_intermediate/filled_age_train.pkl
+    filepath: data/02_intermediate/train_filled_age.pkl
+
+train_filled_embarked:
+    type: pickle.PickleDataSet
+    filepath: data/02_intermediate/train_filled_embarked.pkl
