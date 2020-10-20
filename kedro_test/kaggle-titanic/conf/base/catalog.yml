@@ -12,5 +12,5 @@ test:
     filepath: data/01_raw/test.csv
 
 filled_age_train:
-    type: pandas.CSVDataSet
-    filepath: data/02_intermediate/filled_age_train.csv
+    type: pickle.PickleDataSet
+    filepath: data/02_intermediate/filled_age_train.pkl
