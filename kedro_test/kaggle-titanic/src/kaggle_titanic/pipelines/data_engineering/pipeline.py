@@ -62,11 +62,5 @@ def create_pipeline(**kwargs):
                 outputs="master_table",
                 name="Combine cleaned data"
             ),
-            node(
-                func=identity,
-                inputs="train_1_raw",
-                outputs="train_2_raw",
-                name="Dummy"
-            )
         ]
     )

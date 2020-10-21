@@ -42,11 +42,3 @@ preprocessed_surname:
 master_table:
     type: pandas.CSVDataSet
     filepath: data/04_feature/master_table.csv
-
-train_1_raw:
-    type: pandas.CSVDataSet
-    filepath: data/01_raw/train_1.csv
-
-train_2_raw:
-    type: pandas.CSVDataSet
-    filepath: data/01_raw/train_2.csv

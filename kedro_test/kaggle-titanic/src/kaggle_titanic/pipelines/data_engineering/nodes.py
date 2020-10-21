@@ -69,7 +69,3 @@ def get_master_table(
     df['Title'] = title
     df['Surname'] = surname
     return df
-
-
-def identity(df):
-    return df
