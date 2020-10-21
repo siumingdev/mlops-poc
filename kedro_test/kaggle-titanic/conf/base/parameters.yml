@@ -1,1 +1,5 @@
+features:
+    categorical: ["Pclass", "Sex", ]  # will do label encoding and one-hot encoding
+    numeric: []  # do nothing
 
+target_label: "Survived"

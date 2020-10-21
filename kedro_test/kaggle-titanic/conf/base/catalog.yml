@@ -3,18 +3,50 @@
 # Documentation for this file format can be found in "The Data Catalog"
 # Link: https://kedro.readthedocs.io/en/stable/05_data/01_data_catalog.html
 
-train:
+train_raw:
     type: pandas.CSVDataSet
     filepath: data/01_raw/train.csv
 
-test:
+test_raw:
     type: pandas.CSVDataSet
     filepath: data/01_raw/test.csv
 
-train_filled_age:
-    type: pickle.PickleDataSet
-    filepath: data/02_intermediate/train_filled_age.pkl
+combined_raw:
+    type: pandas.CSVDataSet
+    filepath: data/02_intermediate/combined_raw.csv
 
-train_filled_embarked:
+preprocessed_age:
     type: pickle.PickleDataSet
-    filepath: data/02_intermediate/train_filled_embarked.pkl
+    filepath: data/03_primary/preprocessed_age.pkl
+
+preprocessed_embarked:
+    type: pickle.PickleDataSet
+    filepath: data/03_primary/preprocessed_embarked.pkl
+
+preprocessed_fare:
+    type: pickle.PickleDataSet
+    filepath: data/03_primary/preprocessed_fare.pkl
+
+preprocessed_deck:
+    type: pickle.PickleDataSet
+    filepath: data/03_primary/preprocessed_deck.pkl
+
+preprocessed_title:
+    type: pickle.PickleDataSet
+    filepath: data/03_primary/preprocessed_title.pkl
+
+preprocessed_surname:
+    type: pickle.PickleDataSet
+    filepath: data/03_primary/preprocessed_surname.pkl
+
+master_table:
+    type: pandas.CSVDataSet
+    filepath: data/04_feature/master_table.csv
+
+train_1_raw:
+    type: pandas.CSVDataSet
+    filepath: data/01_raw/train_1.csv
+
+train_2_raw:
+    type: pandas.CSVDataSet
+    filepath: data/01_raw/train_2.csv
