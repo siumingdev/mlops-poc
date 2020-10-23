@@ -6,12 +6,12 @@ from .nodes import *
 def create_pipeline(**kwargs):
     return Pipeline(
         [
-            node(
-                func=combine_kaggle_dataset,
-                inputs=["train_raw", "test_raw"],
-                outputs="combined_raw",
-                name="Combine raw data"
-            ),
+            # node(
+            #     func=combine_kaggle_dataset,
+            #     inputs=["train_raw", "test_raw"],
+            #     outputs="combined_raw",
+            #     name="Combine raw data"
+            # ),
             node(
                 func=get_filled_age,
                 inputs="combined_raw",
@@ -37,6 +37,18 @@ def create_pipeline(**kwargs):
                 name="calculate \"Deck\" from \"Cabin\""
             ),
             node(
+                func=get_family_size,
+                inputs="combined_raw",
+                outputs="preprocessed_family_size",
+                name="calculate \"Family Size\" from \"SibSp\" and \"Parch\""
+            ),
+            node(
+                func=get_ticket_frequency,
+                inputs="combined_raw",
+                outputs="preprocessed_ticket_frequency",
+                name="calculate \"Ticket Frequency\" from \"Ticket\""
+            ),
+            node(
                 func=get_title_from_name,
                 inputs="combined_raw",
                 outputs="preprocessed_title",
@@ -56,6 +68,8 @@ def create_pipeline(**kwargs):
                     "preprocessed_embarked",
                     "preprocessed_fare",
                     "preprocessed_deck",
+                    "preprocessed_family_size",
+                    "preprocessed_ticket_frequency",
                     "preprocessed_title",
                     "preprocessed_surname"
                 ],

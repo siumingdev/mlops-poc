@@ -29,6 +29,14 @@ def get_deck_from_cabin(df: pd.DataFrame) -> pd.Series:
     return df['Deck']
 
 
+def get_family_size(df: pd.DataFrame) -> pd.Series:
+    return df['SibSp'] + df['Parch'] + 1
+
+
+def get_ticket_frequency(df: pd.DataFrame) -> pd.Series:
+    return df.groupby('Ticket')['Ticket'].transform('count')
+
+
 def get_title_from_name(df: pd.DataFrame) -> pd.Series:
     return df['Name'].str.split(', ', expand=True)[1].str.split('.', expand=True)[0]
 
@@ -59,6 +67,8 @@ def get_master_table(
         embarked: pd.Series,
         fare: pd.Series,
         deck: pd.Series,
+        family_size: pd.Series,
+        ticket_frequency: pd.Series,
         title: pd.Series,
         surname: pd.Series) -> pd.DataFrame:
     df = raw_df
@@ -66,6 +76,8 @@ def get_master_table(
     df['Embarked'] = embarked
     df['Fare'] = fare
     df['Deck'] = deck
+    df['Family_Size'] = family_size
+    df['Ticket_Frequency'] = ticket_frequency
     df['Title'] = title
     df['Surname'] = surname
     return df

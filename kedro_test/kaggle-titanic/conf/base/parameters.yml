@@ -1,5 +1,13 @@
-features:
-    categorical: ["Pclass", "Sex", ]  # will do label encoding and one-hot encoding
-    numeric: []  # do nothing
+model_input:
+    categorical: ["Pclass", "Sex", "Embarked", "Deck", "Title"]  # will do one-hot encoding
+    numerical: ["Age", "Family_Size", "Ticket_Frequency"]  # do nothing
 
-target_label: "Survived"
+model_output: "Survived"
+
+test_size: 0.2
+
+random_forest_classifier_params:
+    n_estimators: 1000
+    max_depth: 5
+    min_samples_split: 4
+    min_samples_leaf: 5

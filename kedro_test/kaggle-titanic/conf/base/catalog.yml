@@ -3,42 +3,34 @@
 # Documentation for this file format can be found in "The Data Catalog"
 # Link: https://kedro.readthedocs.io/en/stable/05_data/01_data_catalog.html
 
-train_raw:
-    type: pandas.CSVDataSet
-    filepath: data/01_raw/train.csv
-
-test_raw:
-    type: pandas.CSVDataSet
-    filepath: data/01_raw/test.csv
+#train_raw:
+#    type: pandas.CSVDataSet
+#    filepath: data/01_raw/train.csv
+#
+#test_raw:
+#    type: pandas.CSVDataSet
+#    filepath: data/01_raw/test.csv
+#
+#combined_raw:
+#    type: pandas.CSVDataSet
+#    filepath: data/02_intermediate/combined_raw.csv
 
 combined_raw:
     type: pandas.CSVDataSet
-    filepath: data/02_intermediate/combined_raw.csv
-
-preprocessed_age:
-    type: pickle.PickleDataSet
-    filepath: data/03_primary/preprocessed_age.pkl
-
-preprocessed_embarked:
-    type: pickle.PickleDataSet
-    filepath: data/03_primary/preprocessed_embarked.pkl
-
-preprocessed_fare:
-    type: pickle.PickleDataSet
-    filepath: data/03_primary/preprocessed_fare.pkl
-
-preprocessed_deck:
-    type: pickle.PickleDataSet
-    filepath: data/03_primary/preprocessed_deck.pkl
-
-preprocessed_title:
-    type: pickle.PickleDataSet
-    filepath: data/03_primary/preprocessed_title.pkl
-
-preprocessed_surname:
-    type: pickle.PickleDataSet
-    filepath: data/03_primary/preprocessed_surname.pkl
+    filepath: data/01_raw/train.csv
 
 master_table:
     type: pandas.CSVDataSet
     filepath: data/04_feature/master_table.csv
+
+one_hot_encoders:
+    type: pickle.PickleDataSet
+    filepath: data/06_models/one_hot_encoders.pkl
+
+all_features:
+    type: pickle.PickleDataSet
+    filepath: data/05_model_input/all_features.pkl
+
+random_forest_model:
+    type: pickle.PickleDataSet
+    filepath: data/06_models/random_forest_model.pkl
