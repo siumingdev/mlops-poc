@@ -1,10 +1,13 @@
 from typing import Dict, List, Tuple, Any
+import string
 import logging
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import plot_confusion_matrix
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 def one_hot_encoding(
@@ -59,15 +62,36 @@ def train_random_forest(
     return clf
 
 
-def report_accuracy(
+def report_result(
         model: RandomForestClassifier,
         X_train: np.array,
         X_test: np.array,
         y_train: np.array,
         y_test: np.array
-) -> None:
+) -> Dict[str, plt.Figure]:
     train_score = model.score(X_train, y_train)
     test_score = model.score(X_test, y_test)
 
     logging.info("Model accuracy on train set: %0.2f%%", train_score * 100)
     logging.info("Model accuracy on test set: %0.2f%%", test_score * 100)
+
+    labels = ["Survived" if _ else "Not Survived" for _ in model.classes_]
+
+    plots = [
+        {
+            "file_name": "train.png",
+            "args": [X_train, y_train, "Confusion Matrix on Train Set, Accuracy={:0.2f}%".format(train_score * 100)]
+        },
+        {
+            "file_name": "test.png",
+            "args": [X_test, y_test, "Confusion Matrix on Test Set, Accuracy={:0.2f}%".format(test_score * 100)]
+        },
+    ]
+
+    def create_confusion_matrix(X, y_true, title):
+        fig, ax = plt.subplots()
+        plot_confusion_matrix(model, X, y_true, display_labels=labels, ax=ax)
+        ax.set_title(title)
+        return fig
+
+    return {plot["file_name"]: create_confusion_matrix(*plot["args"]) for plot in plots}

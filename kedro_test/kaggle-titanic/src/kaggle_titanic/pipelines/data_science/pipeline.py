@@ -31,9 +31,9 @@ def create_pipeline(**kwargs):
                 name="Train with sklearn.ensemble.RandomForestClassifier"
             ),
             node(
-                func=report_accuracy,
+                func=report_result,
                 inputs=["random_forest_model", "X_train", "X_test", "y_train", "y_test"],
-                outputs=None,
+                outputs="confusion_matrices",
                 name="Record training result"
             ),
         ]
