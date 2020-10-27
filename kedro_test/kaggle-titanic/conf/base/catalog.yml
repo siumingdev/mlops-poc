@@ -17,24 +17,24 @@
 
 combined_raw:
     type: pandas.CSVDataSet
-    filepath: data/01_raw/train.csv
+    filepath: ./data/01_raw/train.csv
 
 master_table:
     type: pandas.CSVDataSet
-    filepath: data/04_feature/master_table.csv
+    filepath: s3://dev.siuming/kedro_test/data/04_feature/master_table.csv
 
 one_hot_encoders:
     type: pickle.PickleDataSet
-    filepath: data/06_models/one_hot_encoders.pkl
+    filepath: s3://dev.siuming/kedro_test/data/06_models/one_hot_encoders.pkl
 
 all_features:
     type: pickle.PickleDataSet
-    filepath: data/05_model_input/all_features.pkl
+    filepath: s3://dev.siuming/kedro_test/data/05_model_input/all_features.pkl
 
 random_forest_model:
     type: pickle.PickleDataSet
-    filepath: data/06_models/random_forest_model.pkl
+    filepath: s3://dev.siuming/kedro_test/data/06_models/random_forest_model.pkl
 
 confusion_matrices:
     type: matplotlib.MatplotlibWriter
-    filepath: data/08_reporting/confusion_matrices
+    filepath: s3://dev.siuming/kedro_test/data/08_reporting/confusion_matrices

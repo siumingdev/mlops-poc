@@ -16,4 +16,5 @@ Kedro official docs: https://kedro.readthedocs.io/
 1. Add the packages you need to `<project_folder>/requirements.txt`
 1. Run `kedro install`
     1. For Windows users, it is important to have `kedro` installed before running `kedro install`! Otherwise all packages will be installed to `base` env.
-    1. For Linux/Mac users, not tested yet
+    1. For Linux/Mac users, not tested yet.
+1. For the use of AWS S3 / MinIO, `s3fs<=0.4.2` should be installed.
